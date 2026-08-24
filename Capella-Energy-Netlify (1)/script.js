@@ -1,4 +1,4 @@
-const GOOGLE_SCRIPT_URL = "COLLER_ICI_VOTRE_URL_GOOGLE_APPS_SCRIPT_EXEC";
+const GOOGLE_SCRIPT_URL = "https://script.google.com/a/macros/capellaenergy.fr/s/AKfycbyWSk477ccGVssjV386U4TYghgGrnHEp_B4Q4ueWx1H7ipJ3c15sZoI8GqXW7Osx9k8XA/exec";
 const state = { profil: "", energie: "", step: 1 };
 const titles = ["Votre profil", "Votre contrat", "Vos coordonnées"];
 
