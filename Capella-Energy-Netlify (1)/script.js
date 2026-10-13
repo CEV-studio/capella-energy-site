@@ -1,52 +1,8 @@
-const GOOGLE_SCRIPT_URL = "https://script.google.com/a/macros/capellaenergy.fr/s/AKfycbyWSk477ccGVssjV386U4TYghgGrnHEp_B4Q4ueWx1H7ipJ3c15sZoI8GqXW7Osx9k8XA/exec";
-const state = { profil: "", energie: "", step: 1 };
-const titles = ["Votre profil", "Votre contrat", "Vos coordonnées"];
-
-function showStep(step) {
-  state.step = step;
-  document.querySelectorAll(".compare-step").forEach(el => el.classList.toggle("active", Number(el.dataset.step) === step));
-  document.getElementById("step-count").textContent = `Étape ${step} sur 3`;
-  document.getElementById("step-title").textContent = titles[step - 1];
-  document.getElementById("progress").style.width = `${step * 33.333}%`;
-}
-
-document.querySelectorAll("[data-field]").forEach(button => button.addEventListener("click", () => {
-  const field = button.dataset.field;
-  state[field] = button.dataset.value;
-  document.querySelectorAll(`[data-field="${field}"]`).forEach(item => item.classList.toggle("active", item === button));
-  document.querySelector(`input[name="${field}"]`).value = state[field];
-  if (field === "profil") document.getElementById("company-field").style.display = state.profil === "professionnel" ? "grid" : "none";
-}));
-
-document.querySelectorAll("[data-next]").forEach(button => button.addEventListener("click", () => {
-  const next = Number(button.dataset.next);
-  if (state.step === 1 && (!state.profil || !state.energie)) return alert("Choisissez votre profil et l’énergie concernée.");
-  if (state.step === 2) {
-    const section = document.querySelector('[data-step="2"]');
-    if (![...section.querySelectorAll("input,select")].every(field => field.reportValidity())) return;
-  }
-  showStep(next);
-}));
-document.querySelectorAll("[data-back]").forEach(button => button.addEventListener("click", () => showStep(Number(button.dataset.back))));
-
-async function sendForm(form) {
-  if (!GOOGLE_SCRIPT_URL.startsWith("https://script.google.com/")) throw new Error("Le formulaire doit encore être connecté à Google Apps Script.");
-  const body = new URLSearchParams(new FormData(form));
-  await fetch(GOOGLE_SCRIPT_URL, { method: "POST", mode: "no-cors", body });
-}
-
-document.getElementById("compare-form").addEventListener("submit", async event => {
-  event.preventDefault();
-  const button = event.currentTarget.querySelector('[type="submit"]');
-  button.disabled = true; button.textContent = "Envoi en cours…";
-  try { await sendForm(event.currentTarget); event.currentTarget.style.display = "none"; document.querySelector(".progress-head").style.display = "none"; document.querySelector(".progress-track").style.display = "none"; document.getElementById("compare-success").classList.add("active"); }
-  catch (error) { document.getElementById("compare-error").textContent = error.message; button.disabled = false; button.textContent = "Recevoir mon analyse →"; }
-});
-
-document.querySelectorAll(".lead-form").forEach(form => form.addEventListener("submit", async event => {
-  event.preventDefault(); const button = form.querySelector("button"); button.disabled = true;
-  try { await sendForm(form); form.innerHTML = '<div class="success"><span class="success-icon">✓</span><h2>Merci, nous vous rappelons rapidement.</h2></div>'; }
-  catch (error) { form.parentElement.querySelector(".form-message").textContent = error.message; button.disabled = false; }
-}));
-
-showStep(1);
+const header=document.querySelector('.site-header');
+const toggle=document.querySelector('.menu-toggle');
+if(toggle&&header){toggle.addEventListener('click',()=>{const open=header.classList.toggle('open');toggle.setAttribute('aria-expanded',String(open));});}
+document.querySelectorAll('.country-switch a').forEach(link=>{const country=link.textContent.trim().toLowerCase();if(country==='france')link.href='https://capellaenergy.fr/';if(country==='belgique')link.href='https://capellaenergy.be/';});
+document.querySelectorAll('[data-profile-select]').forEach(select=>{const sync=()=>document.querySelectorAll('[data-company-fields]').forEach(group=>group.classList.toggle('hidden',select.value!=='professionnel'));select.addEventListener('change',sync);sync();});
+const cookiePanel=document.querySelector('.cookie-panel');
+if(cookiePanel&&!localStorage.getItem('capella-cookie-choice')){cookiePanel.classList.remove('hidden');cookiePanel.querySelectorAll('button').forEach(button=>button.addEventListener('click',()=>{localStorage.setItem('capella-cookie-choice',button.dataset.choice);cookiePanel.classList.add('hidden');}));}
+document.querySelectorAll('form[data-capella-form]').forEach(form=>{form.addEventListener('submit',()=>{const submit=form.querySelector('[type="submit"]');if(submit){submit.disabled=true;submit.textContent='Envoi en cours…';}});});

@@ -1,0 +1,9 @@
+/assets/* /assets/:splat 200!
+/styles.css /styles.css 200!
+/script.js /script.js 200!
+/legal/* /legal/:splat 200!
+/merci/* /merci/:splat 200!
+https://capellaenergy.fr/* /fr/:splat 200!
+https://www.capellaenergy.fr/* /fr/:splat 200!
+https://capellaenergy.be/* /be/:splat 200!
+https://www.capellaenergy.be/* /be/:splat 200!

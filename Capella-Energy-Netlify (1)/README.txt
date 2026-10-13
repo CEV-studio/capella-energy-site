@@ -1,15 +1,17 @@
-CAPELLA ENERGY — VERSION NETLIFY
+CAPELLA ENERGY — SITE FRANCE & BELGIQUE
 
-Déploiement
-1. Décompressez le fichier ZIP.
-2. Dans Netlify, ouvrez « Add new site » puis « Deploy manually ».
-3. Glissez le dossier capella-energy-netlify dans la zone de déploiement.
+Le site est entièrement statique et ne nécessite aucune commande de compilation.
 
-Connexion du formulaire
-1. Déployez le script Google Apps Script fourni précédemment.
-2. Copiez son adresse se terminant par /exec.
-3. Ouvrez script.js.
-4. Remplacez COLLER_ICI_VOTRE_URL_GOOGLE_APPS_SCRIPT_EXEC par cette adresse.
-5. Redéployez le dossier sur Netlify.
+Structure principale
+- / : choix de l’espace France ou Belgique
+- /fr/ : courtage en énergie pour les professionnels en France
+- /be/ : énergie et télécommunications pour particuliers et professionnels en Belgique
+- /legal/ : mentions légales, confidentialité et cookies
 
-Le site est entièrement statique : aucune commande de compilation n’est nécessaire.
+Formulaires
+Les formulaires utilisent la détection native Netlify Forms et possèdent chacun un nom distinct.
+Les formulaires professionnels acceptent une facture au format PDF, JPG ou PNG.
+Les soumissions sont consultables dans l’interface Netlify du site.
+
+Publication
+Le dossier « Capella-Energy-Netlify (1) » doit rester le répertoire publié par Netlify.
