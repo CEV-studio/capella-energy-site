@@ -1,4 +1,4 @@
-CAPELLA ENERGY — SITE FRANCE & BELGIQUE
+CAPELLA ENERGY : SITE FRANCE & BELGIQUE
 
 Le site est entièrement statique et ne nécessite aucune commande de compilation.
 
