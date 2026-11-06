@@ -24,3 +24,7 @@ footer{background:#031a37;color:#fff;padding:66px 0 26px}.footer-grid{display:gr
 /* Blog listing: compact title without a large hero */
 .blog-heading{padding:36px 0 10px;background:#fff}.blog-heading .breadcrumbs{margin-bottom:10px;color:var(--muted)}.blog-heading h1{max-width:850px;margin:0 0 10px;font:700 clamp(30px,3.5vw,42px)/1.15 "Manrope",sans-serif;letter-spacing:-.035em;color:var(--navy-deep)}.blog-heading p{max-width:700px;margin:0;color:var(--muted);font-size:16px}.blog-listing{padding:20px 0 72px}
 @media(max-width:600px){.blog-heading{padding:26px 0 8px}.blog-heading h1{font-size:30px}.blog-heading p{font-size:15px}.blog-listing{padding:18px 0 54px}}
+
+/* Compact page headings for the France section */
+.page-hero.compact-page-hero{padding:34px 0 18px;background:#fff;color:var(--ink)}.page-hero.compact-page-hero .breadcrumbs{margin-bottom:12px;color:var(--muted)}.page-hero.compact-page-hero .eyebrow,.page-hero.compact-page-hero h1{color:var(--navy-deep)}.page-hero.compact-page-hero h1{font-size:clamp(30px,3.5vw,42px);line-height:1.16;margin:0 0 10px}.page-hero.compact-page-hero p:last-child{max-width:760px;margin:0;color:var(--muted);font-size:16px}.page-hero.compact-page-hero.article-hero{padding:34px 0 18px}.page-hero.compact-page-hero .article-updated{color:var(--muted)!important;margin-top:12px!important}
+@media(max-width:600px){.page-hero.compact-page-hero,.page-hero.compact-page-hero.article-hero{padding:25px 0 14px}.page-hero.compact-page-hero h1{font-size:30px}.page-hero.compact-page-hero p:last-child{font-size:15px}}
