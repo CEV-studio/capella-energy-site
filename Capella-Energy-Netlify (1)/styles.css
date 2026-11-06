@@ -28,3 +28,22 @@ footer{background:#031a37;color:#fff;padding:66px 0 26px}.footer-grid{display:gr
 /* Compact page headings for the France section */
 .page-hero.compact-page-hero{padding:34px 0 18px;background:#fff;color:var(--ink)}.page-hero.compact-page-hero .breadcrumbs{margin-bottom:12px;color:var(--muted)}.page-hero.compact-page-hero .eyebrow,.page-hero.compact-page-hero h1{color:var(--navy-deep)}.page-hero.compact-page-hero h1{font-size:clamp(30px,3.5vw,42px);line-height:1.16;margin:0 0 10px}.page-hero.compact-page-hero p:last-child{max-width:760px;margin:0;color:var(--muted);font-size:16px}.page-hero.compact-page-hero.article-hero{padding:34px 0 18px}.page-hero.compact-page-hero .article-updated{color:var(--muted)!important;margin-top:12px!important}
 @media(max-width:600px){.page-hero.compact-page-hero,.page-hero.compact-page-hero.article-hero{padding:25px 0 14px}.page-hero.compact-page-hero h1{font-size:30px}.page-hero.compact-page-hero p:last-child{font-size:15px}}
+
+/* France: add depth and contrast without restoring large dark hero banners */
+.page-hero.compact-page-hero,.blog-heading{background:linear-gradient(112deg,#edf6fb 0%,#f6f8fa 64%,#fff1e7 100%);border-bottom:1px solid #e7edf2}
+.page-hero.compact-page-hero h1::after,.blog-heading h1::after{content:"";display:block;width:46px;height:4px;margin-top:14px;border-radius:4px;background:var(--orange)}
+.page-hero.compact-page-hero .eyebrow,.blog-heading .eyebrow{color:var(--orange-dark)}
+.blog-listing{background:linear-gradient(180deg,#fff 0%,#f7f9fb 100%)}
+.blog-card{position:relative;overflow:hidden;background:linear-gradient(180deg,#f9fcfe 0%,#fff 42%);border-top:3px solid var(--sky-blue);box-shadow:0 8px 28px rgba(4,31,66,.07);transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease}
+.blog-card:nth-child(3n+2){border-top-color:var(--orange)}
+.blog-card:nth-child(3n){border-top-color:var(--navy)}
+.blog-card:hover,.blog-card:focus-within{transform:translateY(-4px);box-shadow:0 16px 38px rgba(4,31,66,.12)}
+.blog-category{width:fit-content;padding:4px 9px;border-radius:99px;background:#eaf4fa;color:var(--blue);letter-spacing:.055em}
+.blog-card:nth-child(3n+2) .blog-category{background:var(--soft-orange);color:var(--orange-dark)}
+.blog-card h2 a:focus-visible,.blog-card .text-link:focus-visible{outline:3px solid #ff9a59;outline-offset:3px;border-radius:3px}
+.article-section{background:linear-gradient(180deg,#fff 0%,#fafbfd 100%)}
+.article-body section:not(.sources):not(.article-cta) h2{border-left:3px solid var(--orange);padding-left:14px}
+.article-body .sources{background:linear-gradient(125deg,#edf6fb 0%,#f7f9fa 100%)}
+.article-cta{background:linear-gradient(115deg,#fff0e5 0%,#f2f8fc 100%);box-shadow:0 14px 36px rgba(4,31,66,.06)}
+@media(max-width:600px){.page-hero.compact-page-hero h1::after,.blog-heading h1::after{margin-top:11px}.blog-card:hover,.blog-card:focus-within{transform:none}}
+@media(prefers-reduced-motion:reduce){.blog-card{transition:none}}
