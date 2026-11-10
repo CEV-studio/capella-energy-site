@@ -15,3 +15,4 @@ Les soumissions sont consultables dans l’interface Netlify du site.
 
 Publication
 Le dossier « Capella-Energy-Netlify (1) » doit rester le répertoire publié par Netlify.
+
