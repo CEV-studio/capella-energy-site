@@ -1,0 +1,10 @@
+{
+  "name": "capella-energy-site",
+  "main": "cloudflare-worker.js",
+  "compatibility_date": "2026-11-10",
+  "assets": {
+    "directory": "/tmp/capella-assets",
+    "binding": "ASSETS",
+    "run_worker_first": true
+  }
+}
