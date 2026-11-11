@@ -1,3 +1,4 @@
+// Routage des sites Capella en France et en Belgique.
 const SHARED = /^(?:\/assets(?:\/|$)|\/styles\.css$|\/script\.js$|\/legal(?:\/|$)|\/merci(?:\/|$))/;
 export default {
   async fetch(request, env) {
